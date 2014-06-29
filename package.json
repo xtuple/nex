@@ -1,46 +1,65 @@
 {
-  "name": "nde",
-  "description": "A npm-based integrated development environment",
+  "name": "nex",
+  "description": "Install and manage dependencies and links between npm modules using package.json",
   "version": "0.1.16",
-  "homepage": "https://github.com/tjwebb/npm-ide",
+  "homepage": "https://github.com/tjwebb/nex",
   "author": {
     "name": "Travis Webb"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/tjwebb/npm-ide"
+    "url": "git://github.com/tjwebb/nex"
   },
   "bugs": {
-    "url": "https://github.com/tjwebb/npm-ide/issues"
+    "url": "https://github.com/tjwebb/nex/issues"
   },
   "license": "MIT",
   "scripts": {
-    "test": "node_modules/mocha/bin/_mocha test/*.js -t 30000 --reporter spec -b"
+    "test": "mocha test/ -R spec -b"
   },
   "bin": {
-    "nde": "bin/npm-workspace"
+    "nex": "index.js"
   },
   "preferGlobal": true,
   "dependencies": {
-    "commander": "~2.2.0",
-    "lodash": "~2.4.1",
-    "ncp": "~0.5.0",
+    "co": "^3.0.6",
+    "co-child-process": "0.0.3",
+    "co-fs": "^1.2.0",
+    "commander": "^2.2.0",
+    "cp": "^0.1.1",
+    "glob": "^4.0.2",
+    "harmonious": "^0.5.1",
+    "lodash": "^2.4.1",
+    "npm": "^1.4.17",
     "npmlog": "^0.1.1",
-    "rimraf": "~2.2.2",
-    "spawned": "~0.1.1",
-    "when": "~3.0.1"
+    "rimraf": "^2.2.8",
+    "semver": "^2.3.1",
+    "thunkify": "^2.1.2"
   },
   "devDependencies": {
     "mocha": "~1.18.2",
     "chai": "~1.9.1"
   },
+  "globalDependencies": {
+    "nex-global": "^0.5"
+  },
+  "linkDependencies": {
+    "nex-test": "test"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">= 0.11.12"
+  },
   "keywords": [
     "npm",
     "link",
+    "nexus",
+    "nex",
     "ide",
     "node",
     "development",
     "dependencies",
+    "globalDependencies",
     "peerDependencies",
     "management",
     "environment",
