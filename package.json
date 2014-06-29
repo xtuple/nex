@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "node_modules/mocha/bin/_mocha test/*.js -t 30000 --reporter spec"
+    "test": "node_modules/mocha/bin/_mocha test/*.js -t 30000 --reporter spec -b"
   },
   "bin": {
     "nde": "bin/npm-workspace"
@@ -24,11 +24,11 @@
   "dependencies": {
     "commander": "~2.2.0",
     "lodash": "~2.4.1",
-    "rimraf": "~2.2.2",
-    "when": "~3.0.1",
     "ncp": "~0.5.0",
+    "npmlog": "^0.1.1",
+    "rimraf": "~2.2.2",
     "spawned": "~0.1.1",
-    "through2": "~0.4.1"
+    "when": "~3.0.1"
   },
   "devDependencies": {
     "mocha": "~1.18.2",
