@@ -42,7 +42,8 @@
     "chai": "~1.9.1"
   },
   "globalDependencies": {
-    "nex-global": "^0.5"
+    "nex-global": "^0.5",
+    "n": "^1.2.9"
   },
   "linkDependencies": {
     "nex-test": "test"
