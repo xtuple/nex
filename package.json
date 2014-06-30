@@ -31,6 +31,7 @@
     "harmonious": "^0.5.1",
     "lodash": "^2.4.1",
     "mkdirp": "^0.5.0",
+    "n-api": "^1.2.9",
     "npm": "^1.4.17",
     "npmlog": "^0.1.1",
     "rimraf": "^2.2.8",
@@ -39,7 +40,8 @@
   },
   "devDependencies": {
     "mocha": "~1.18.2",
-    "chai": "~1.9.1"
+    "chai": "~1.9.1",
+    "nex-test": "^0.5.0"
   },
   "globalDependencies": {
     "nex-global": "^0.5",
@@ -47,6 +49,9 @@
   },
   "linkDependencies": {
     "nex-test": "test"
+  },
+  "pedanticDependencies": {
+    "nex-pedantic": "^0.5"
   },
   "engineStrict": true,
   "engines": {
