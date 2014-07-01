@@ -32,12 +32,27 @@
     "lodash": "^2.4.1",
     "mkdirp": "^0.5.0",
     "n-api": "^1.2.9",
-    "npm": "^1.4.17",
     "npmlog": "^0.1.1",
     "rimraf": "^2.2.8",
     "semver": "^2.3.1",
     "thunkify": "^2.1.2"
   },
+  "bundledDependencies": [
+    "co",
+    "co-child-process",
+    "co-fs",
+    "commander",
+    "cp",
+    "glob",
+    "harmonious",
+    "lodash",
+    "mkdirp",
+    "n-api",
+    "npmlog",
+    "rimraf",
+    "semver",
+    "thunkify"
+  ],
   "devDependencies": {
     "mocha": "~1.18.2",
     "chai": "~1.9.1",
