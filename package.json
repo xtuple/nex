@@ -1,7 +1,7 @@
 {
   "name": "nex",
   "description": "Install and manage dependencies and links between npm modules using package.json",
-  "version": "1.2.44",
+  "version": "1.2.45",
   "homepage": "https://github.com/tjwebb/nex",
   "author": {
     "name": "Travis Webb"
