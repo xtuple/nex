@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "publish": "npm install -f && npm dedupe",
+    "prepublish": "npm dedupe",
     "test": "mocha test/ -R spec -b"
   },
   "bin": {
