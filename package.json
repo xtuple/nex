@@ -22,6 +22,7 @@
   },
   "preferGlobal": true,
   "dependencies": {
+    "colors": "^0.6.2",
     "commander": "^2.2.0",
     "harmonious": "^0.5.4",
     "lodash": "^2.4.1",

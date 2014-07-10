@@ -9,6 +9,7 @@ var program = require('commander');
 var pkg = require(path.resolve(process.cwd(), './package'));
 var log = require('npmlog');
 var logfile = require('npmlog-file');
+var colors = require('colors');
 
 log.heading = 'nex';
 global.cwd = process.cwd();
@@ -39,13 +40,19 @@ function prefix (action, field) {
 }
 
 function run (action, field) {
-  log.info(action, field);
-  if (!_.contains([ 'do', 'undo' ], action)) {
-    throw new Error('action not recognized: '+ action);
-  }
   try {
-    var handler = load(nex.toNpm(field));
-    handler[action](pkg);
+    if (_.isString(field)) {
+      log.info(action, field);
+      let handler = load(nex.toNpm(field));
+      handler[action](pkg);
+    }
+    else if (_.isArray(pkg.nex)) {
+      _.each(pkg.nex, function (field) {
+        log.info(action, field);
+        let handler = load(nex.toNpm(field));
+        handler[action](pkg);
+      });
+    }
   }
   catch (e) {
     log.error(prefix(action, field), e.message);
@@ -62,24 +69,15 @@ program._name = 'nex';
 program.version(require('./package').version);
 
 program.command('do [field]').action(function (field) {
-  if (_.isString(field)) {
-    run('do', field);
-  }
-  else if (_.isArray(pkg.nex)) {
-    _.each(pkg.nex, function (field) {
-      run('do', field);
-    });
-  }
+  run('do', field);
 });
 program.command('undo [field]').action(function (field) {
-  if (_.isString(field)) {
-    run('undo', field);
-  }
-  else if (_.isArray(pkg.nex)) {
-    _.each(pkg.nex, function (field) {
-      run('undo', field);
-    });
-  }
+  run('undo', field);
+});
+program.command('*').action(function (action) {
+  log.error('not recognized', 'nex cannot', action.magenta);
+  log.error('not recognized', 'nex can', 'do'.green, 'and it can', 'undo'.green);
+  process.exit(1);
 });
 
 program.parse(process.argv);
