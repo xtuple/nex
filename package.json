@@ -1,6 +1,6 @@
 {
   "name": "nex",
-  "description": "Install and manage dependencies and links between npm modules using package.json",
+  "description": "Build tool that uses your package.json to manage environment, linked and globla dependencies, symlinks, plugins, and all other things needed for rapid and streamlined node.js module development",
   "version": "2.0.4",
   "homepage": "https://github.com/tjwebb/nex",
   "author": {
@@ -56,10 +56,15 @@
     "nex",
     "ide",
     "node",
+    "build",
+    "tool",
     "development",
     "dependencies",
     "globalDependencies",
     "peerDependencies",
+    "linkDependencies",
+    "symlinks",
+    "link",
     "management",
     "environment",
     "workspace"
