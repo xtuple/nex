@@ -19,8 +19,11 @@ function load (id) {
   }
   catch (e) {
     log.info('loading module', id);
+    process.chdir(__dirname);
     proc.spawnSync('npm', [ 'install', '-f', id ], { cwd: __dirname });
-    return require(id);
+    var mod = require(id);
+    process.chdir(global.cwd);
+    return mod;
   }
   try {
     return require(id);
