@@ -76,7 +76,7 @@ program.command('undo [field]').action(function (field) {
 });
 program.command('*').action(function (action) {
   log.error('not recognized', 'nex cannot', action.magenta);
-  log.error('not recognized', 'nex can', 'do'.green, 'and it can', 'undo'.green);
+  log.info('not recognized', 'nex can', 'do'.green, 'and it can', 'undo'.green);
   process.exit(1);
 });
 
