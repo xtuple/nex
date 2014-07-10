@@ -1,14 +1,14 @@
 'use strict';
 
+var path = require('path');
+var proc = require('child_process');
 var _ = require('lodash');
 var n = require('n-api');
-var proc = require('child_process');
-var program = require('commander');
-var path = require('path');
-var logfile = require('npmlog-file');
 var nex = require('nex-api');
+var program = require('commander');
 var pkg = require(path.resolve(process.cwd(), './package'));
 var log = require('npmlog');
+var logfile = require('npmlog-file');
 
 log.heading = 'nex';
 global.cwd = process.cwd();
