@@ -4,7 +4,7 @@
   "version": "1.2.47",
   "homepage": "https://github.com/tjwebb/nex",
   "author": {
-    "name": "Travis Webb"
+    "name": "Travis Webb <me@traviswebb.com>"
   },
   "repository": {
     "type": "git",
@@ -45,10 +45,8 @@
     "commander",
     "cp",
     "glob",
-    "harmonious",
     "lodash",
     "mkdirp",
-    "n-api",
     "npmlog",
     "rimraf",
     "semver",
@@ -60,18 +58,14 @@
     "nex-test": "^0.5.0"
   },
   "globalDependencies": {
-    "nex-global": "^0.5",
     "n": "^1.2.9"
   },
   "linkDependencies": {
     "nex-test": "test"
   },
-  "pedanticDependencies": {
-    "nex-pedantic": "^0.5"
-  },
   "engineStrict": true,
   "engines": {
-    "node": ">= 0.11.12"
+    "node": ">=0.11.12"
   },
   "keywords": [
     "npm",
