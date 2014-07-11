@@ -51,6 +51,7 @@
     "nex-test": "test"
   },
   "nex": [
+    "engines",
     "globalDependencies",
     "linkDependencies"
   ],

@@ -3,7 +3,6 @@
 var path = require('path');
 var proc = require('child_process');
 var _ = require('lodash');
-var n = require('n-api');
 var nex = require('nex-api');
 var program = require('commander');
 var log = require('npmlog');
@@ -83,20 +82,6 @@ program.command('*').action(function (action) {
 });
 
 resolver = new Resolver(function () {
-  if (pkg.engines && pkg.engines.node) {
-    var node = resolver.satisfy(pkg.engines.node);
-    n(node);
-    process.on('exit', function () {
-      n(node);
-    });
-  }
-  else {
-    n(process.version);
-    process.on('exit', function () {
-      n(process.version);
-    });
-  }
-
   program.parse(process.argv);
   if (!program.args.length) program.help();
 });
