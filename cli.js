@@ -6,10 +6,19 @@ var _ = require('lodash');
 var n = require('n-api');
 var nex = require('nex-api');
 var program = require('commander');
-var pkg = require(path.resolve(process.cwd(), './package'));
 var log = require('npmlog');
 var logfile = require('npmlog-file');
 var colors = require('colors');
+var Resolver = require('node-latest-version');
+var resolver;
+
+try {
+  var pkg = require(path.resolve(process.cwd(), './package'));
+}
+catch (e) {
+  log.error(process.cwd(), 'this is not a node module');
+  process.exit(1);
+}
 
 log.heading = 'nex';
 global.cwd = process.cwd();
@@ -35,30 +44,26 @@ function load (id) {
   }
 }
 
-function prefix (action, field) {
-  return action + ' ' + field;
-}
-
 function run (action, field) {
   try {
     if (_.isString(field)) {
       log.info(action, field);
       let handler = load(nex.toNpm(field));
-      handler[action](pkg);
+      handler[action](pkg, resolver);
     }
     else if (_.isArray(pkg.nex)) {
       _.each(pkg.nex, function (field) {
         log.info(action, field);
         let handler = load(nex.toNpm(field));
-        handler[action](pkg);
+        handler[action](pkg, resolver);
       });
     }
   }
   catch (e) {
-    log.error(prefix(action, field), e.message);
-    log.verbose(prefix(action, field), e.stack.split('\n'));
+    log.error(action, field, e.message);
+    log.verbose(action, field, e.stack.split('\n'));
     log.info('debug', 'See nex-debug.log for more info');
-    logfile.write(log, 'nex-debug.log');
+    logfile.write(log, path.resolve(global.cwd, 'nex-debug.log'));
   }
 }
 
@@ -77,5 +82,21 @@ program.command('*').action(function (action) {
   process.exit(1);
 });
 
-program.parse(process.argv);
-if (!program.args.length) program.help();
+resolver = new Resolver(function () {
+  if (pkg.engines && pkg.engines.node) {
+    var node = resolver.satisfy(pkg.engines.node);
+    n(node);
+    process.on('exit', function () {
+      n(node);
+    });
+  }
+  else {
+    n(process.version);
+    process.on('exit', function () {
+      n(process.version);
+    });
+  }
+
+  program.parse(process.argv);
+  if (!program.args.length) program.help();
+});
