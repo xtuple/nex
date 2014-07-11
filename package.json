@@ -55,7 +55,7 @@
     "globalDependencies",
     "linkDependencies"
   ],
-  "engineStrict": true,
+  "engineStrict": false,
   "engines": {
     "node": ">=0.11.12"
   },
