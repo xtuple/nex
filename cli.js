@@ -60,9 +60,6 @@ function run (action, field) {
     log.info('debug', 'See nex-debug.log for more info');
     logfile.write(log, 'nex-debug.log');
   }
-  finally {
-    process.exit(1);
-  }
 }
 
 program._name = 'nex';
