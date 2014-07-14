@@ -29,7 +29,7 @@ function load (id) {
   catch (e) {
     log.info('loading module', id);
     process.chdir(__dirname);
-    proc.spawnSync('npm', [ 'install', '-f', id ], { cwd: __dirname });
+    proc.spawnSync('npm', [ 'install', '-f', '--no-global', id ], { cwd: __dirname });
     var mod = require(id);
     process.chdir(global.cwd);
     return mod;
