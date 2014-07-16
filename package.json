@@ -1,6 +1,6 @@
 {
   "name": "nex",
-  "description": "Build tool that uses your package.json to manage environment, linked and globla dependencies, symlinks, plugins, and all other things needed for rapid and streamlined node.js module development",
+  "description": "Build tool that uses your package.json to manage environment, linked and global dependencies, symlinks, plugins, and all other things needed for rapid and streamlined node.js module development",
   "version": "2.0.13",
   "homepage": "https://github.com/tjwebb/nex",
   "author": {
