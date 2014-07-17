@@ -69,14 +69,20 @@ function run (action, field) {
 }
 
 program._name = 'nex';
-program.version(require('./package').version);
+program
+  .version(require('./package').version)
+  .option('-v, --verbose');
 
-program.command('do [field]').action(function (field) {
-  run('do', field);
-});
-program.command('undo [field]').action(function (field) {
-  run('undo', field);
-});
+program.command('do [field]')
+  .action(function (field) {
+    run('do', field);
+  });
+
+program.command('undo [field]')
+  .action(function (field) {
+    run('undo', field);
+  });
+
 program.command('*').action(function (action) {
   log.error('not recognized', 'nex cannot', action.magenta);
   log.info('not recognized', 'nex can', 'do'.green, 'and it can', 'undo'.green);
@@ -85,5 +91,7 @@ program.command('*').action(function (action) {
 
 resolver = new Resolver(function () {
   program.parse(process.argv);
+
+  if (program.verbose) log.level = 'verbose';
   if (!program.args.length) program.help();
 });
