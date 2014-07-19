@@ -25,7 +25,7 @@ package.json:
 }
 ```
 
-#### 2. Hook the phases you want `nex` to control
+#### 2. Intercept the phases you want `nex` to control
 package.json:
 ```json
 {
