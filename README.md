@@ -99,6 +99,29 @@ package.json
 $ nex do linkDependencies
 ```
 
+#### [symlinks](https://www.npmjs.org/package/symlinks)
+Create arbitrary `<link>` to any `<target>`
+```json
+{
+  "symlinks": {
+    "<target>": "<link">,
+    "./lib/shared.js": "/usr/share/superlib/shared.js"
+  }
+}
+```
+
+#### [engines](https://www.npmjs.org/package/engines)
+Ensure that all npm commands are invoked with the correct version of node as defined in the standard `engines` field
+
+package.json
+```json
+{
+  "engines": {
+    "node": "^0.11.13"
+  }
+}
+```
+
 ## Extend `nex` yourself
 Anyone can extend nex. Create a node module that exposes the methods `do` and `undo`, name it after the package.json field you want to operate on, and publish it to npmjs.org as `nex-<field>`.
 
