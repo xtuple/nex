@@ -109,7 +109,7 @@ Anyone can extend nex. Create a node module that exposes the methods `do` and `u
   - Do something
 
 #### `undo (package)`
-  - @param package {Object}  package.json object
+  - `@param package {Object}  package.json object`
   - Undo whatever do did
 
 ## Links
