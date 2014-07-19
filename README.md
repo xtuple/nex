@@ -20,7 +20,7 @@ Create a `nex` array to define the order of execution
 ```
 
 #### [repository](https://www.npmjs.org/package/nex-repository)
-Use this when you want to download and extract this module from the repository defined in the `repository` field. Useful for hosting Github-authenticated private modules publicly on npmjs.org.
+Use this when you want to download and extract this module from the repository defined in the `repository` field. Useful for hosting Github-authenticated private modules publicly on npmjs.org. If the module is private, you'll be prompted for a password.
 
 package.json:
 ```json
