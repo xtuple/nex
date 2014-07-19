@@ -10,7 +10,8 @@ $ npm install -g nex
 ```
 
 ## Use
-Create a `nex` array to define the order of execution
+
+#### 1. Create a `nex` array to define the order of execution
 
 package.json:
 ```json
@@ -21,6 +22,17 @@ package.json:
     "globalDependencies",
     "linkDependencies"
   ]
+}
+```
+
+#### 2. Hook the phases you want `nex` to control
+package.json:
+```json
+{
+  "scripts": {
+    "preinstall": "nex do",
+    "pretest": "nex do engines"
+  }
 }
 ```
 
