@@ -75,6 +75,19 @@ Create symlinks from `node_modules/<module>` to `<path>`
 $ nex do linkDependencies
 ```
 
+### Extend
+Anyone can extend nex. Create a node module that exposes the methods `do` and `undo`, name it after the package.json field you want to operate on, and publish it to npmjs.org as `nex-<field>`.
+
+### API
+
+Do the thing you want done
+- `do (package)`
+  - package {Object}  package.json object
+
+Undo the thing that `do` did
+- `undo (package)`
+  - package {Object}  package.json object
+
 ### Links
 - npm package: <https://www.npmjs.org/package/nex>
 - github page: <https://github.com/tjwebb/nex>
