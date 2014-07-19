@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tjwebb/nex.png)](https://travis-ci.org/tjwebb/nex)
 
-Simplify management of local npm and node.js development resources and processes. Just add stuff to your `package.json` and watch it work.
+Simplify management of local npm and node.js development resources and processes. Add stuff to your `package.json` and watch it work.
 
 ## Install
 ```sh
@@ -12,6 +12,7 @@ $ npm install -g nex
 ## Use
 
 #### 1. Create a `nex` array to define the order of execution
+`nex do` will do all the things in this array.
 
 package.json:
 ```json
@@ -39,7 +40,7 @@ package.json:
 ## `nex` plugins
 
 #### [repository](https://www.npmjs.org/package/nex-repository)
-Use this when you want to download and extract this module from the repository defined in the `repository` field. Useful for hosting Github-authenticated private modules publicly on npmjs.org. If the module is private, you'll be prompted for a password.
+Use this when you want to download and extract this module from the repository defined in the `repository` field. Useful for hosting Github-authenticated private modules publicly on npmjs.org. If the module is private, you'll be prompted for your Github credentials.
 
 package.json:
 ```json
@@ -59,14 +60,14 @@ package.json:
 ```
 index.js
 lib/
-other-stuff/
+private-stuff/
 ```
 ```sh
 $ nex do repository
 ```
 
 #### [globalDependencies](https://www.npmjs.org/package/nex-global-dependencies)
-Install depencies globally, i.e. `npm install -g <module>`
+Install dependencies globally, automatically as part of npm's normal installation process.
 
 package.json
 ```json
