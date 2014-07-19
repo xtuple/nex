@@ -4,7 +4,7 @@
 
 Simplify management of local [npm](npmjs.org) and [node.js](nodejs.org) development resources and processes. Add stuff to your `package.json` and watch it work. 
 
-`nex` is un-opinionated, npm-integrated, and fully-discombobulated. It's like [grunt](http://gruntjs.com) or [gulp](http://gulpjs.com), but with 10x less code and a flatter learning curve. It is a pure essentialization of the "task-runner". It dynamically loads any needed plugins from the npm registry.
+`nex` is un-opinionated, npm-integrated, and fully-discombobulated. It's like [grunt](http://gruntjs.com) or [gulp](http://gulpjs.com), but with 10x less code and a flatter learning curve. It is a pure essentialization of the "task-runner", and is designed to be magical, but not mysterious.
 
 ## Install
 ```sh
@@ -13,7 +13,7 @@ $ npm install -g nex
 
 ## Use
 
-#### 1. Create a `nex` array to define the order of execution
+#### 1. Create a `nex` array to define the general order of execution
 `nex do` will do all the things in this array.
 
 package.json:
@@ -28,7 +28,7 @@ package.json:
 }
 ```
 
-#### 2. Intercept the phases you want `nex` to control
+#### 2. Intercept the `npm` phases you want `nex` to control
 package.json:
 ```json
 {
@@ -38,8 +38,9 @@ package.json:
   }
 }
 ```
+`nex` operates by declarative fiat. There's no special build file to contstruct, environment to define, or configs to set. Your existing package.json declares which `nex` routines run during each `npm` phase.
 
-## `nex` plugins
+## `nex` routines
 
 #### [repository](https://www.npmjs.org/package/nex-repository)
 Use this when you want to download and extract this module from the repository defined in the `repository` field. Useful for hosting Github-authenticated private modules publicly on npmjs.org. If the module is private, you'll be prompted for your Github credentials.
@@ -101,6 +102,8 @@ $ nex do linkDependencies
 
 #### [symlinks](https://www.npmjs.org/package/symlinks)
 Create arbitrary `<link>` to any `<target>`
+
+package.json
 ```json
 {
   "symlinks": {
@@ -108,6 +111,9 @@ Create arbitrary `<link>` to any `<target>`
     "./lib/shared.js": "/usr/share/superlib/shared.js"
   }
 }
+```
+```sh
+$ nex do symlinks
 ```
 
 #### [engines](https://www.npmjs.org/package/engines)
@@ -120,6 +126,9 @@ package.json
     "node": "^0.11.13"
   }
 }
+```
+```sh
+$ nex do engines
 ```
 
 ## Extend `nex` yourself
