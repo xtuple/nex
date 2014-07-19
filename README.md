@@ -48,8 +48,6 @@ package.json:
   "license": "Proprietary",
   "repository": {
     "type": "git",
-    "org": "tjwebb",
-    "repo": "super-nex",
     "url": "git://github.com/tjwebb/super-nex.git",
     "private": true
   }
