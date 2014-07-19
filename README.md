@@ -4,7 +4,7 @@
 
 ## Purpose
 
-Simplify management of local npm and node.js development. Just add stuff to your `package.json` and watch it work.
+Simplify management of local npm and node.js development resources and processes. Just add stuff to your `package.json` and watch it work.
 
 ## Usage
 Create a `nex` array to define the order of execution
