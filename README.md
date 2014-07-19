@@ -2,12 +2,17 @@
 
 [![Build Status](https://travis-ci.org/tjwebb/nex.png)](https://travis-ci.org/tjwebb/nex)
 
-## Purpose
-
 Simplify management of local npm and node.js development resources and processes. Just add stuff to your `package.json` and watch it work.
 
-## Usage
+## Install
+```sh
+$ npm install -g nex
+```
+
+## Use
 Create a `nex` array to define the order of execution
+
+package.json:
 ```json
 {
   "nex": [
