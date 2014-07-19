@@ -80,13 +80,13 @@ Anyone can extend nex. Create a node module that exposes the methods `do` and `u
 
 ### API
 
-#### Do whatever you want done
-- `do (package)`
-  - package {Object}  package.json object
+#### `do (package)`
+  - `@param package {Object}  package.json object`
+  - Do something
 
-#### Undo whatever `do` did
-- `undo (package)`
-  - package {Object}  package.json object
+#### `undo (package)`
+  - @param package {Object}  package.json object
+  - Undo whatever do did
 
 ### Links
 - npm package: <https://www.npmjs.org/package/nex>
