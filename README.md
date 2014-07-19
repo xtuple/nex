@@ -80,11 +80,11 @@ Anyone can extend nex. Create a node module that exposes the methods `do` and `u
 
 ### API
 
-Do the thing you want done
+#### Do whatever you want done
 - `do (package)`
   - package {Object}  package.json object
 
-Undo the thing that `do` did
+#### Undo whatever `do` did
 - `undo (package)`
   - package {Object}  package.json object
 
