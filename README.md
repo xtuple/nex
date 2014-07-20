@@ -43,6 +43,9 @@ package.json:
 ## `nex` routines
 
 #### [repository](https://www.npmjs.org/package/nex-repository)
+```sh
+$ nex do repository
+```
 Use this when you want to download and extract this module from the repository defined in the `repository` field. Useful for hosting Github-authenticated private modules publicly on npmjs.org. If the module is private, you'll be prompted for your Github credentials.
 
 package.json:
@@ -63,11 +66,11 @@ index.js
 lib/
 private-stuff/
 ```
-```sh
-$ nex do repository
-```
 
 #### [globalDependencies](https://www.npmjs.org/package/nex-global-dependencies)
+```sh
+$ nex do globalDependencies
+```
 Install dependencies globally, automatically as part of npm's normal installation process.
 
 package.json
@@ -80,11 +83,10 @@ package.json
 }
 ```
 
-```sh
-$ nex do globalDependencies
-```
-  
 #### [linkDependencies](https://www.npmjs.org/package/nex-link-dependencies)
+```sh
+$ nex do linkDependencies
+```
 Create symlinks from `node_modules/<module>` to `<path>`
 
 package.json
@@ -96,11 +98,11 @@ package.json
   }
 }
 ```
-```sh
-$ nex do linkDependencies
-```
 
 #### [symlinks](https://www.npmjs.org/package/symlinks)
+```sh
+$ nex do symlinks
+```
 Create arbitrary `<link>` to any `<target>`
 
 package.json
@@ -112,11 +114,11 @@ package.json
   }
 }
 ```
-```sh
-$ nex do symlinks
-```
 
 #### [engines](https://www.npmjs.org/package/engines)
+```sh
+$ nex do engines
+```
 Ensure that all npm commands are invoked with the correct version of node as defined in the standard `engines` field
 
 package.json
@@ -126,9 +128,6 @@ package.json
     "node": "^0.11.13"
   }
 }
-```
-```sh
-$ nex do engines
 ```
 
 ## Extend `nex` yourself
