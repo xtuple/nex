@@ -66,6 +66,7 @@ index.js
 lib/
 private-stuff/
 ```
+<br/>
 
 #### `globalDependencies` ([npm](https://www.npmjs.org/package/nex-global-dependencies))
 ```sh
@@ -82,6 +83,7 @@ package.json
   }
 }
 ```
+<br/>
 
 #### `linkDependencies` ([npm](https://www.npmjs.org/package/nex-link-dependencies))
 ```sh
@@ -98,6 +100,7 @@ package.json
   }
 }
 ```
+<br/>
 
 #### `symlinks` ([npm](https://www.npmjs.org/package/symlinks))
 ```sh
@@ -114,6 +117,7 @@ package.json
   }
 }
 ```
+<br/>
 
 #### `engines` ([npm](https://www.npmjs.org/package/engines))
 ```sh
