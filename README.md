@@ -42,7 +42,7 @@ package.json:
 
 ## `nex` routines
 
-#### [repository](https://www.npmjs.org/package/nex-repository)
+#### [`repository`](https://www.npmjs.org/package/nex-repository)
 ```sh
 $ nex do repository
 ```
