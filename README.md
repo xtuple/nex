@@ -42,7 +42,7 @@ package.json:
 
 ## `nex` routines
 
-#### [`repository`](https://www.npmjs.org/package/nex-repository)
+#### `repository` ([npm](https://www.npmjs.org/package/nex-repository))
 ```sh
 $ nex do repository
 ```
@@ -67,7 +67,7 @@ lib/
 private-stuff/
 ```
 
-#### [globalDependencies](https://www.npmjs.org/package/nex-global-dependencies)
+#### `globalDependencies` ([npm](https://www.npmjs.org/package/nex-global-dependencies))
 ```sh
 $ nex do globalDependencies
 ```
@@ -83,7 +83,7 @@ package.json
 }
 ```
 
-#### [linkDependencies](https://www.npmjs.org/package/nex-link-dependencies)
+#### `linkDependencies` ([npm](https://www.npmjs.org/package/nex-link-dependencies))
 ```sh
 $ nex do linkDependencies
 ```
@@ -99,7 +99,7 @@ package.json
 }
 ```
 
-#### [symlinks](https://www.npmjs.org/package/symlinks)
+#### `symlinks` ([npm](https://www.npmjs.org/package/symlinks))
 ```sh
 $ nex do symlinks
 ```
@@ -115,7 +115,7 @@ package.json
 }
 ```
 
-#### [engines](https://www.npmjs.org/package/engines)
+#### `engines` ([npm](https://www.npmjs.org/package/engines))
 ```sh
 $ nex do engines
 ```
