@@ -2,9 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tjwebb/nex.png)](https://travis-ci.org/tjwebb/nex)
 
-Simplify management of local [npm](npmjs.org) and [node.js](nodejs.org) development resources and processes. Add stuff to your `package.json` and watch it work. 
-
-`nex` is un-opinionated, npm-integrated, and fully-discombobulated. It's like [grunt](http://gruntjs.com) or [gulp](http://gulpjs.com), but with 10x less code and a flatter learning curve. It is a pure essentialization of the "task-runner", and is designed to be magical, but not mysterious.
+Simplify management of local [npm](npmjs.org) and [node.js](nodejs.org) development resources and processes. Add stuff to your `package.json` and watch it work. It's like [grunt](http://gruntjs.com) or [gulp](http://gulpjs.com), but with 10x less code and a flatter learning curve. It is a pure essentialization of the "task-runner", and is designed to be magical, but not mysterious.
 
 ## Install
 ```sh
