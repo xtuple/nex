@@ -27,7 +27,6 @@
     "harmonious": "^0.5.4",
     "lodash": "^2.4.1",
     "nex-api": "^2.0.1",
-    "node-latest-version": "^1.0.3",
     "npmlog": "^0.1.1",
     "npmlog-file": "^0.1.1",
     "rimraf": "^2.2.8"

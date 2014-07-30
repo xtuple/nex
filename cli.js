@@ -8,8 +8,6 @@ var program = require('commander');
 var log = require('npmlog');
 var logfile = require('npmlog-file');
 var colors = require('colors');
-var Resolver = require('node-latest-version');
-var resolver;
 
 try {
   var pkg = require(path.resolve(process.cwd(), './package'));
@@ -50,13 +48,13 @@ function run (action, field) {
     if (_.isString(field)) {
       log.info(action, field);
       let handler = load(nex.toNpm(field));
-      handler[action](pkg, resolver);
+      handler[action](pkg);
     }
     else if (_.isArray(pkg.nex)) {
       _.each(pkg.nex, function (field) {
         log.info(action, field);
         let handler = load(nex.toNpm(field));
-        handler[action](pkg, resolver);
+        handler[action](pkg);
       });
     }
   }
@@ -89,9 +87,7 @@ program.command('*').action(function (action) {
   process.exit(1);
 });
 
-resolver = new Resolver(function () {
-  program.parse(process.argv);
+program.parse(process.argv);
 
-  if (program.verbose) log.level = 'verbose';
-  if (!program.args.length) program.help();
-});
+if (program.verbose) log.level = 'verbose';
+if (!program.args.length) program.help();
