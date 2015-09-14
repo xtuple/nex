@@ -1,7 +1,7 @@
 {
   "name": "nex",
   "description": "Simplify management of local npm and node.js development resources and processes, such as symlinks, global dependencies, etc. It's like grunt or gulp, but with 100x less code and a flatter learning curve.",
-  "version": "2.0.20",
+  "version": "2.0.21",
   "homepage": "https://github.com/xtuple/nex",
   "author": {
     "name": "Travis Webb <me@traviswebb.com>"
